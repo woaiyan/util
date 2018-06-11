@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 var g ={
     tag:function(params){
          var parent =params.parent;
@@ -15,7 +18,9 @@ var g ={
             }
          }
          if(event){
-              _tag.addEventListener(event.type,event.fn);
+        	 for(var i=0;i<event.length;i++){
+        		 _tag.addEventListener(event[i].type,event[i].fn); 
+        	 }
          }
          if(children){
                for(var i=0;i<children.length;i++){
