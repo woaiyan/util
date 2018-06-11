@@ -1,5 +1,14 @@
 /**
- * 
+ * data : {
+ *   tag:"aa"，//标签名字
+ *  attributes:{} //所有需要用到的属性,
+ * event:[{
+ *    type:"aa", //该标签需要添加的事件类型
+ *   fn:aa //事件的回调函数
+ *   }]
+ *  children:[], //子标签，子标签的数据格式与父标签相同
+ *   parent:aa,//该dom元素的父元素，如果没该属性将返回该dom元素
+ *  }
  */
 var g ={
     tag:function(params){
