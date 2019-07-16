@@ -19,3 +19,22 @@ stylesheet.type="text/css";
 stylesheet.id="testId";
 document.getElementsByTagName("head")[0].appendChild(stylesheet)
 }
+
+function checkCss(str){
+  let parent = ".mapper";
+  let reg = /\.(.*){/;
+  let strArr = str.split("}");
+  for(let i=0;i<strArr.length;i++){
+    strArr[i]=strArr[i].replace(reg,function(e){
+      return parent+" "+e;
+    })
+  }
+  return strArr.join("}")
+}
+
+function freshCss(str){
+  let parent = ".mapper ";
+  let reg = new RegExp(parent,"g")
+  return str.replace(reg,"");
+}
+
