@@ -1,0 +1,21 @@
+<div class="test"></div>
+
+function handleCss(){
+let target = document.getElementById("testId");
+if(target){
+  document.head.removeChild(target);
+}
+let str = ".test{"+
+  "width:200px;"+
+  "height:200px;"+
+  "background-color:red"
+  "}"
+let blob = new Blob([str],{type:"text/css"});
+let myUrl = URL.createObjectURL(blob);
+let stylesheet = document.createElement("link")
+stylesheet.href=myUrl;
+stylesheet.rel="stylesheet";
+stylesheet.type="text/css";
+stylesheet.id="testId";
+document.getElementsByTagName("head")[0].appendChild(stylesheet)
+}
